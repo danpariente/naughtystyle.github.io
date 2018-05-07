@@ -19,6 +19,8 @@ Un servidor monolítico de este tipo es una forma natural de abordar la construc
 
 Las aplicaciones monolíticas pueden tener éxito, pero cada vez son más las personas que sienten frustraciones con las mismas, especialmente a medida que se despliegan más aplicaciones en la nube. Los ciclos de cambio están unidos - un cambio hecho en una pequeña parte de la aplicación, requiere que todo el monolito sea reconstruido y desplegado. Con el tiempo, a menudo es difícil mantener una buena estructura modular, lo que hace más difícil mantener los cambios que sólo deberían afectar a un módulo dentro de ese módulo. El escalado requiere escalar toda la aplicación en lugar de partes de ésta que requieren mayores recursos.
 
+![Monolitos & Microservicios](https://raw.githubusercontent.com/naughtystyle/naughtystyle.github.io/master/images/sketch.png)
+
 Estas frustraciones han llevado al estilo arquitectónico del microservicio: construir aplicaciones como conjuntos de servicios. Además del hecho de que los servicios son desplegables y escalables de forma independiente, cada servicio también proporciona un límite de módulo sólido, permitiendo incluso que se escriban diferentes servicios en diferentes lenguajes de programación. También pueden ser gestionados por diferentes equipos.
 
 No afirmamos que el estilo de microservicio sea novedoso o innovador, sus raíces se remontan al menos a los principios de diseño de Unix. Pero sí creemos que no hay suficiente gente que considere una arquitectura de microservicio y que muchos desarrollos de software estarían mejor si la usaran.
@@ -48,7 +50,11 @@ Cuando se busca dividir una aplicación grande en partes, a menudo la administra
 > Cualquier organización que diseñe un sistema (definido ampliamente) producirá un diseño cuya estructura es una copia de la estructura de comunicación de la organización.
 -- Melvyn Conway, 1967
 
+![Ley de Conway](https://raw.githubusercontent.com/naughtystyle/naughtystyle.github.io/master/images/conways-law.png)
+
 El enfoque de la división desde el punto de vista de los microservicios es diferente, ya que se divide en servicios organizados en base a la capacidad empresarial. Tales servicios requieren una amplia implementación de software para esa área de negocio, incluyendo interfaz de usuario, almacenamiento persistente y cualquier colaboración externa. En consecuencia, los equipos son multifuncionales, incluyendo toda la gama de habilidades necesarias para el desarrollo: experiencia del usuario, base de datos y gestión de proyectos.
+
+![Organizacion de Equipos](https://raw.githubusercontent.com/naughtystyle/naughtystyle.github.io/master/images/PreferFunctionalStaffOrganization.png)
 
 Una empresa organizada de esta manera es www.comparethemarket.com. Los equipos multifuncionales son responsables de la construcción y operación de cada producto y cada producto se divide en una serie de servicios individuales que se comunican a través de un bus de mensajes (message bus).
 
@@ -117,6 +123,8 @@ Este problema es común entre aplicaciones, pero también puede ocurrir dentro d
 
 Además de descentralizar las decisiones sobre modelos conceptuales, los microservicios también descentralizan las decisiones de almacenamiento de datos. Mientras que las aplicaciones monolíticas prefieren una única base de datos lógica para los datos persistentes, las empresas a menudo prefieren una única base de datos para toda una gama de aplicaciones - muchas de estas decisiones se toman a través de los modelos comerciales de los proveedores en torno a la concesión de licencias. Los microservicios prefieren dejar que cada servicio administre su propia base de datos, ya sea diferentes instancias de la misma tecnología de base de datos, o sistemas de base de datos completamente diferentes - un enfoque llamado Persistencia Políglota. Se puede utilizar la persistencia políglota en un monolito, pero aparece más frecuentemente con microservicios.
 
+![Datos Descentralizados](https://raw.githubusercontent.com/naughtystyle/naughtystyle.github.io/master/images/decentralised-data.png)
+
 La responsabilidad de la descentralización de los datos en todos los microservicios tiene consecuencias para la gestión de las actualizaciones. El enfoque común para hacer frente a las actualizaciones ha consistido en utilizar las transacciones para garantizar la coherencia al actualizar múltiples recursos. Este enfoque se utiliza a menudo dentro de los monolitos.
 
 El uso de transacciones de este tipo ayuda a la coherencia, pero impone un acoplamiento temporal significativo, lo que resulta problemático en múltiples servicios. Las transacciones distribuidas son notoriamente difíciles de implementar y, en consecuencia, las arquitecturas de microservicios hacen hincapié en la coordinación sin transacciones entre servicios, con el reconocimiento explícito de que la coherencia sólo puede ser una coherencia eventual y que los problemas se resuelven mediante operaciones compensatorias.
@@ -129,11 +137,15 @@ Las técnicas de automatización de infraestructuras han evolucionado enormement
 
 Muchos de los productos o sistemas que se están construyendo con microservicios están siendo construidos por equipos con amplia experiencia en la Entrega Continua (CD) y su precursor, la Integración Continua (CI). Los equipos que construyen software de esta manera hacen un uso extensivo de las técnicas de automatización de infraestructura. Esto se ilustra a continuación.
 
+![Build](https://raw.githubusercontent.com/naughtystyle/naughtystyle.github.io/master/images/basic-pipeline.png)
+
 Como este no es un artículo sobre Entrega Continua, pondremos atención solo a un par de características clave. Queremos la mayor confianza posible en que nuestro software funciona, por lo que realizamos muchas pruebas automatizadas. La promoción del software de trabajo 'arriba' de la tubería significa que automatizamos la implementación en cada nuevo entorno.
 
 Una aplicación monolítica será construida, testada y empujada a través de estos ambientes alegremente. Resulta que una vez que se ha invertido en automatizar el camino a la producción de un monolito, entonces desplegar más aplicaciones ya no parece tan aterrador. Recuerde, uno de los objetivos del CD es hacer que el despliegue sea aburrida, así que ya sea que se trate de una o tres aplicaciones, siempre y cuando sea aburrida no importa[12].
 
 Otra área en la que vemos equipos que utilizan una amplia automatización de la infraestructura es en la administración de microservicios en la producción. En contraste con nuestra afirmación anterior de que mientras el despliegue sea aburrido no hay tanta diferencia entre monolitos y microservicios, el panorama operacional para cada uno puede ser notablemente diferente.
+
+![Despliegue de Microservicios](https://raw.githubusercontent.com/naughtystyle/naughtystyle.github.io/master/images/micro-deployment.png)
 
 ## Diseño para fallas
 
