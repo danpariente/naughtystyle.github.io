@@ -1,0 +1,15 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Daniel Pariente">
+  <meta name="author" content="Daniel Pariente">
+  <title>Daniel Pariente</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+  <style amp-custom>
+  {% capture include_to_scssify %}
+    {% include styles.scss %}
+  {% endcapture %}
+  {{ include_to_scssify | scssify | replace: "@charset "UTF-8";", "" }}
+  </style>
+</head>
