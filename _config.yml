@@ -1,2 +1,15 @@
 title: Daniel Pariente
 description: Daniel Pariente
+
+markdown: kramdown
+
+kramdown:
+  parse_block_html: true
+
+exclude:
+  - README.md
+  - Rakefile
+  - Gemfile
+  - Gemfile.lock
+  - "*.Rmd"
+  - vendor
