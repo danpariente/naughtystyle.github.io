@@ -34,6 +34,20 @@ img.ruby-cert {
   display: block;
 }
 
+a.post-link {
+  color: rgb(220,54,67);
+}
+
+.tiny-date {
+  color: #DDD;
+  font-size: 0.7em;
+}
+
+img.dan-image {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+
 @media only screen and (max-width: 40.625em) {
   aside.left-container, aside.right-container {
     @include span-columns(12);

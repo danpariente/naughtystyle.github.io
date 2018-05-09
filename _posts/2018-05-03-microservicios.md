@@ -1,11 +1,14 @@
 ---
+layout: post
 title: Microservicios
 permalink: /microservicios/
+tags: ["Software Architecture"]
 ---
 
 # Microservicios
 
 ## Una definición de este nuevo termino arquitectural
+
 
 El término "Arquitectura de Microservicios" ha surgido en los últimos años para describir una forma particular de diseñar aplicaciones de software como conjuntos de servicios de despliegue independiente. Si bien no existe una definición precisa de este estilo arquitectónico, existen ciertas características comunes en torno a la organización acerca de la capacidad operativa, la distribución automatizada, la inteligencia en los endpoints y el control descentralizado de lenguajes y datos.
 
@@ -90,13 +93,25 @@ En un monolito, los componentes se ejecutan durante el proceso y la comunicació
 ```
 *Microservicios y SOA*
 
-Cuando hablamos de microservicios, una pregunta común es si se trata de una Arquitectura Orientada a Servicios (SOA) como la que vimos hace una década. Hay mérito en este punto, porque el estilo de microservicio es muy similar a lo que algunos defensores de SOA han estado a favor. El problema, sin embargo, es que SOA significa demasiadas cosas diferentes, y que la mayoría de las veces que nos encontramos con algo llamado "SOA" es significativamente diferente al estilo que estamos describiendo aquí, usualmente debido a un enfoque en ESBs usados para integrar aplicaciones monolíticas.
+Cuando hablamos de microservicios, una pregunta común es si se trata de una Arquitectura Orientada a Servicios (SOA)
+como la que vimos hace una década. Hay mérito en este punto, porque el estilo de microservicio es muy similar a lo que algunos defensores de
+SOA han estado a favor. El problema, sin embargo, es que SOA significa demasiadas cosas diferentes, y que la mayoría de las veces que nos
+encontramos con algo llamado "SOA" es significativamente diferente al estilo que estamos describiendo aquí, usualmente debido a un enfoque en
+ESBs usados para integrar aplicaciones monolíticas.
 
-En particular, hemos visto tantas implementaciones fallidas de la orientación a servicios - desde la tendencia a ocultar la complejidad en los ESB[6], a iniciativas plurianuales fallidas que cuestan millones y no aportan ningún valor, a modelos de gobierno centralizado que inhiben activamente el cambio, que a veces es difícil ver más allá de estos problemas.
+En particular, hemos visto tantas implementaciones fallidas de la orientación a servicios - desde la tendencia a ocultar la complejidad en los
+ESB[6], a iniciativas plurianuales fallidas que cuestan millones y no aportan ningún valor, a modelos de gobierno centralizado que inhiben
+activamente el cambio, que a veces es difícil ver más allá de estos problemas.
 
-Ciertamente, muchas de las técnicas que se utilizan en la comunidad de microservicios han crecido a partir de las experiencias de los desarrolladores que integran servicios en grandes organizaciones. El patrón de Lector Tolerante es un ejemplo de esto. Los esfuerzos por utilizar la web han contribuido, el uso de protocolos sencillos es otro enfoque derivado de estas experiencias - una reacción lejos de los estándares centrales que han alcanzado una complejidad que es, francamente, impresionante. (Cada vez que usted necesita una ontología para manejar sus ontologías, se da cuenta de que está en serios problemas.
+Ciertamente, muchas de las técnicas que se utilizan en la comunidad de microservicios han crecido a partir de las experiencias de los
+desarrolladores que integran servicios en grandes organizaciones. El patrón de Lector Tolerante es un ejemplo de esto. Los esfuerzos por
+utilizar la web han contribuido, el uso de protocolos sencillos es otro enfoque derivado de estas experiencias - una reacción lejos de los
+estándares centrales que han alcanzado una complejidad que es, francamente, impresionante. (Cada vez que usted necesita una ontología para
+manejar sus ontologías, se da cuenta de que está en serios problemas.
 
-Esta manifestación común de SOA ha llevado a algunos defensores de los microservicios a rechazar la etiqueta de SOA por completo, aunque otros consideran que los microservicios son una forma de SOA[7], tal vez la orientación a servicios bien hecha. De cualquier manera, el hecho de que SOA signifique cosas tan diferentes significa que es valioso tener un término que defina más claramente este estilo arquitectónico.
+Esta manifestación común de SOA ha llevado a algunos defensores de los microservicios a rechazar la etiqueta de SOA por completo, aunque otros
+consideran que los microservicios son una forma de SOA[7], tal vez la orientación a servicios bien hecha. De cualquier manera, el hecho de que
+SOA signifique cosas tan diferentes significa que es valioso tener un término que defina más claramente este estilo arquitectónico.
 ```
 
 ## Gobernación descentralizada
@@ -195,32 +210,32 @@ Así que escribimos esto con cauteloso optimismo. Hasta ahora, hemos visto sufic
 
 ### Notas a pie de página
 
-1: El término "microservicio" fue discutido en un taller de arquitectos de software cerca de Venecia en mayo de 2011 para describir lo que los participantes vieron como un estilo arquitectónico común que muchos de ellos habían estado explorando recientemente. En mayo de 2012, el mismo grupo se decidió por "microservicios" como el nombre más apropiado. James presentó algunas de estas ideas como un estudio de caso en marzo de 2012 en el 33º Grado en Cracovia en Microservicios - Java, el camino de Unix al igual que Fred George más o menos al mismo tiempo. Adrian Cockcroft en Netflix, describiendo este enfoque como "SOA de grano fino" fue pionero en el estilo a escala web, al igual que muchos de los otros mencionados en este artículo - Joe Walnes, Dan North, Evan Botcher y Graham Tackley.
+[1] El término "microservicio" fue discutido en un taller de arquitectos de software cerca de Venecia en mayo de 2011 para describir lo que los participantes vieron como un estilo arquitectónico común que muchos de ellos habían estado explorando recientemente. En mayo de 2012, el mismo grupo se decidió por "microservicios" como el nombre más apropiado. James presentó algunas de estas ideas como un estudio de caso en marzo de 2012 en el 33º Grado en Cracovia en Microservicios - Java, el camino de Unix al igual que Fred George más o menos al mismo tiempo. Adrian Cockcroft en Netflix, describiendo este enfoque como "SOA de grano fino" fue pionero en el estilo a escala web, al igual que muchos de los otros mencionados en este artículo - Joe Walnes, Dan North, Evan Botcher y Graham Tackley.
 
-2: El término monolito ha sido usado por la comunidad Unix durante algún tiempo. Aparece en The Art of Unix Programming para describir sistemas que se hacen demasiado grandes.
+[2] El término monolito ha sido usado por la comunidad Unix durante algún tiempo. Aparece en The Art of Unix Programming para describir sistemas que se hacen demasiado grandes.
 
-3: Muchos diseñadores orientados a objetos, incluidos nosotros mismos, utilizamos el término objeto de servicio en el sentido de diseño orientado a dominio (DDD) para un objeto que lleva a cabo un proceso significativo que no está vinculado a una entidad. Este es un concepto diferente de cómo estamos usando "servicio" en este artículo. Lamentablemente el término servicio tiene ambos significados y tenemos que vivir con la polisemia.
+[3] Muchos diseñadores orientados a objetos, incluidos nosotros mismos, utilizamos el término objeto de servicio en el sentido de diseño orientado a dominio (DDD) para un objeto que lleva a cabo un proceso significativo que no está vinculado a una entidad. Este es un concepto diferente de cómo estamos usando "servicio" en este artículo. Lamentablemente el término servicio tiene ambos significados y tenemos que vivir con la polisemia.
 
-4: Consideramos que una aplicación es una construcción social que une un código base, un grupo de funcionalidad y un cuerpo de financiamiento.
+[4] Consideramos que una aplicación es una construcción social que une un código base, un grupo de funcionalidad y un cuerpo de financiamiento.
 
-5: El artículo original se puede encontrar en el sitio web de Melvyn Conway.
+[5] El artículo original se puede encontrar en el sitio web de Melvyn Conway.
 
-6: No podemos resistirnos a mencionar la declaración de Jim Webber de que ESB significa "Egregious Spaghetti Box".
+[6] No podemos resistirnos a mencionar la declaración de Jim Webber de que ESB significa "Egregious Spaghetti Box".
 
-7: Netflix hace explícito el enlace - hasta hace poco se refería a su estilo arquitectónico como SOA de grano fino.
+[7] Netflix hace explícito el enlace - hasta hace poco se refería a su estilo arquitectónico como SOA de grano fino.
 
-8: En los extremos de escala, las organizaciones a menudo pasan a protocolos binarios - protobufs por ejemplo. Los sistemas que utilizan estos sistemas todavía exhiben la característica de puntos finales inteligentes, conducciones tontas y transparencia de intercambio por escala. La mayoría de las propiedades web y, sin duda, la gran mayoría de las empresas no necesitan hacer esta compensación - la transparencia puede ser una gran victoria.
+[8] En los extremos de escala, las organizaciones a menudo pasan a protocolos binarios - protobufs por ejemplo. Los sistemas que utilizan estos sistemas todavía exhiben la característica de puntos finales inteligentes, conducciones tontas y transparencia de intercambio por escala. La mayoría de las propiedades web y, sin duda, la gran mayoría de las empresas no necesitan hacer esta compensación - la transparencia puede ser una gran victoria.
 
-9: "YAGNI" o "You are't going to need it" es un principio de XP y exhortación a no añadir características hasta que sepas que las necesitas.
+[9] "YAGNI" o "You are't going to need it" es un principio de XP y exhortación a no añadir características hasta que sepas que las necesitas.
 
-10: Es un poco poco insensato de nuestra parte afirmar que los monolitos son un solo lenguaje - para construir sistemas en la web de hoy en día, es probable que necesites saber JavaScript y XHTML, CSS, el lenguaje de tu servidor de elección, SQL y un dialecto ORM. Difícilmente un solo lenguaje, pero sabes a lo que nos referimos.
+[10] Es un poco poco insensato de nuestra parte afirmar que los monolitos son un solo lenguaje - para construir sistemas en la web de hoy en día, es probable que necesites saber JavaScript y XHTML, CSS, el lenguaje de tu servidor de elección, SQL y un dialecto ORM. Difícilmente un solo lenguaje, pero sabes a lo que nos referimos.
 
-11: Adrian Cockcroft menciona específicamente "developer self-service" y "Developers run what they wrote"(sic) en esta excelente presentación realizada en Flowcon en noviembre de 2013.
+[11] Adrian Cockcroft menciona específicamente "developer self-service" y "Developers run what they wrote"(sic) en esta excelente presentación realizada en Flowcon en noviembre de 2013.
 
-12: Estamos siendo un poco insensatos aquí. Obviamente, desplegar más servicios, en topologías más complejas es más difícil que desplegar un único monolito. Afortunadamente, los patrones reducen esta complejidad; sin embargo, la inversión en herramientas sigue siendo una necesidad.
+[12] Estamos siendo un poco insensatos aquí. Obviamente, desplegar más servicios, en topologías más complejas es más difícil que desplegar un único monolito. Afortunadamente, los patrones reducen esta complejidad; sin embargo, la inversión en herramientas sigue siendo una necesidad.
 
-13: De hecho, Dan North se refiere a este estilo como Arquitectura de Componentes Reemplazables en lugar de microservicios. Puesto que esto parece hablar de un subconjunto de las características, preferimos estas últimas.
+[13] De hecho, Dan North se refiere a este estilo como Arquitectura de Componentes Reemplazables en lugar de microservicios. Puesto que esto parece hablar de un subconjunto de las características, preferimos estas últimas.
 
-14: Kent Beck destaca esto como uno de sus principios de diseño en Patrones de Implementación.
+[14] Kent Beck destaca esto como uno de sus principios de diseño en Patrones de Implementación.
 
-15: Y SOA no es la raíz de esta historia. Recuerdo que la gente decía "hemos estado haciendo esto durante años" cuando el término SOA apareció a principios de siglo. Un argumento fue que este estilo ve sus raíces en la forma en que los programas COBOL se comunicaban a través de archivos de datos en los primeros días de la informática empresarial. En otra dirección, se podría argumentar que los microservicios son lo mismo que el modelo de programación de Erlang, pero aplicados a un contexto de aplicación empresarial.
+[15] Y SOA no es la raíz de esta historia. Recuerdo que la gente decía "hemos estado haciendo esto durante años" cuando el término SOA apareció a principios de siglo. Un argumento fue que este estilo ve sus raíces en la forma en que los programas COBOL se comunicaban a través de archivos de datos en los primeros días de la informática empresarial. En otra dirección, se podría argumentar que los microservicios son lo mismo que el modelo de programación de Erlang, pero aplicados a un contexto de aplicación empresarial.

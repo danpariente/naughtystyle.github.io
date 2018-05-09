@@ -2,14 +2,31 @@
 layout: default
 ---
 
-<div class="wrapper">
-  <header>
-    <h1 class="header">{{ site.title }}</h1>
-  </header>
-  <section>
+<aside class="left-container">
+	<img src="/images/site/dan.jpeg" class="dan-image">
+</aside>
 
-  </section>
-  <footer>
-    {% include footer.html %}
-  </footer>
-</div>
+<aside class="right-container">
+  <h2>Daniel Pariente</h2>
+  <br />
+  <p>
+    Software Engineer with 7+ years of experience architecting and designing software.
+    Cofounded and directed Apptegy Inc., startup that scaled to 45+ states in the US with a volume of dozens of millions of users.
+    Leaded teams with multiple members worldwide. Master Craftsman obsessed with clean code and best practices.
+  </p>
+  <p>
+    Current Certified Ruby Programmer from the Ruby Association.
+    <img src="/images/site/ruby_certified.png" class="ruby-cert">
+  </p>
+
+  <h2>Posts</h2>
+  <br />
+  <ul>
+    {% for post in site.posts %}
+     <li>
+       <a href="{{post.url}}" class="post-link">{{ post.title }}</a>
+       <div class="tiny-date">{{post.date | date: "%m-%d-%Y"}}</div>
+     </li>
+     {% endfor %}
+  </ul>
+</aside>
