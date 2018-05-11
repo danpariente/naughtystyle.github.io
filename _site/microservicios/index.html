@@ -108,7 +108,8 @@ img.dan-image { opacity: 0.6; filter: alpha(opacity=60); }
 
 @media only screen and (max-width: 40.625em) { aside.left-container, aside.right-container { float: left; display: block; margin-right: 2.3576515979%; width: 100%; }
   aside.left-container:last-child, aside.right-container:last-child { margin-right: 0; }
-  aside.left-container img.dan-image, aside.right-container img.dan-image { display: block; margin: 0 auto; } }
+  aside.left-container img.dan-image, aside.right-container img.dan-image { display: block; margin: 0 auto; }
+  section.main-container p { margin: 40px !important; padding: 40px !important; } }
 header.navigation { background-color: #333; border-bottom: 1px solid #1a1a1a; font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; height: 60px; width: 100%; z-index: 999; }
 header.navigation .menu-wrapper { max-width: 68em; margin-left: auto; margin-right: auto; position: relative; z-index: 9999; }
 header.navigation .menu-wrapper:after { content: ""; display: table; clear: both; }
@@ -198,9 +199,10 @@ p { line-height: 2.2em; }
     <p class="navigation-menu-button" id="js-mobile-menu">MENU</p>
     <div class="nav">
       <ul id="navigation-menu">
-        <li class="nav-link"><a href="/">Home</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">Blog</a></li>
-        <li class="nav-link"><a href="/contact">Contact</a></li>
+        <li class="nav-link"><a href="http://danielpariente.com/">Home</a></li>
+        <li class="nav-link"><a href="/">Blog</a></li>
+        <li class="nav-link"><a href="http://danielpariente.com/contact">Contact</a></li>
+        <li class="nav-link"><a href="https://uptowork.com/mycv/daniel-pariente-resume" target="_blank">Resume</a></li>
       </ul>
     </div>
   </div>
@@ -248,7 +250,7 @@ p { line-height: 2.2em; }
 
 <p>Las aplicaciones monolíticas pueden tener éxito, pero cada vez son más las personas que sienten frustraciones con las mismas, especialmente a medida que se despliegan más aplicaciones en la nube. Los ciclos de cambio están unidos - un cambio hecho en una pequeña parte de la aplicación, requiere que todo el monolito sea reconstruido y desplegado. Con el tiempo, a menudo es difícil mantener una buena estructura modular, lo que hace más difícil mantener los cambios que sólo deberían afectar a un módulo dentro de ese módulo. El escalado requiere escalar toda la aplicación en lugar de partes de ésta que requieren mayores recursos.</p>
 
-<p><img src="https://raw.githubusercontent.com/naughtystyle/naughtystyle.github.io/master/images/sketch.png" alt="Monolitos &amp; Microservicios" /></p>
+<p><img src="/images/microservices/sketch.png" alt="Monolitos &amp; Microservicios" /></p>
 
 <p>Estas frustraciones han llevado al estilo arquitectónico del microservicio: construir aplicaciones como conjuntos de servicios. Además del hecho de que los servicios son desplegables y escalables de forma independiente, cada servicio también proporciona un límite de módulo sólido, permitiendo incluso que se escriban diferentes servicios en diferentes lenguajes de programación. También pueden ser gestionados por diferentes equipos.</p>
 
@@ -281,11 +283,11 @@ p { line-height: 2.2em; }
 – Melvyn Conway, 1967</p>
 </blockquote>
 
-<p><img src="https://raw.githubusercontent.com/naughtystyle/naughtystyle.github.io/master/images/conways-law.png" alt="Ley de Conway" /></p>
+<p><img src="/images/microservices/conways_law.png" alt="Ley de Conway" /></p>
 
 <p>El enfoque de la división desde el punto de vista de los microservicios es diferente, ya que se divide en servicios organizados en base a la capacidad empresarial. Tales servicios requieren una amplia implementación de software para esa área de negocio, incluyendo interfaz de usuario, almacenamiento persistente y cualquier colaboración externa. En consecuencia, los equipos son multifuncionales, incluyendo toda la gama de habilidades necesarias para el desarrollo: experiencia del usuario, base de datos y gestión de proyectos.</p>
 
-<p><img src="https://raw.githubusercontent.com/naughtystyle/naughtystyle.github.io/master/images/PreferFunctionalStaffOrganization.png" alt="Organizacion de Equipos" /></p>
+<p><img src="/images/microservices/prefer_functional_staff_organisation.png" alt="Organizacion de Equipos" /></p>
 
 <p>Una empresa organizada de esta manera es www.comparethemarket.com. Los equipos multifuncionales son responsables de la construcción y operación de cada producto y cada producto se divide en una serie de servicios individuales que se comunican a través de un bus de mensajes (message bus).</p>
 
@@ -367,7 +369,7 @@ SOA signifique cosas tan diferentes significa que es valioso tener un término q
 
 <p>Además de descentralizar las decisiones sobre modelos conceptuales, los microservicios también descentralizan las decisiones de almacenamiento de datos. Mientras que las aplicaciones monolíticas prefieren una única base de datos lógica para los datos persistentes, las empresas a menudo prefieren una única base de datos para toda una gama de aplicaciones - muchas de estas decisiones se toman a través de los modelos comerciales de los proveedores en torno a la concesión de licencias. Los microservicios prefieren dejar que cada servicio administre su propia base de datos, ya sea diferentes instancias de la misma tecnología de base de datos, o sistemas de base de datos completamente diferentes - un enfoque llamado Persistencia Políglota. Se puede utilizar la persistencia políglota en un monolito, pero aparece más frecuentemente con microservicios.</p>
 
-<p><img src="https://raw.githubusercontent.com/naughtystyle/naughtystyle.github.io/master/images/decentralised-data.png" alt="Datos Descentralizados" /></p>
+<p><img src="/images/microservices/decentralised_data.png" alt="Datos Descentralizados" /></p>
 
 <p>La responsabilidad de la descentralización de los datos en todos los microservicios tiene consecuencias para la gestión de las actualizaciones. El enfoque común para hacer frente a las actualizaciones ha consistido en utilizar las transacciones para garantizar la coherencia al actualizar múltiples recursos. Este enfoque se utiliza a menudo dentro de los monolitos.</p>
 
@@ -381,7 +383,7 @@ SOA signifique cosas tan diferentes significa que es valioso tener un término q
 
 <p>Muchos de los productos o sistemas que se están construyendo con microservicios están siendo construidos por equipos con amplia experiencia en la Entrega Continua (CD) y su precursor, la Integración Continua (CI). Los equipos que construyen software de esta manera hacen un uso extensivo de las técnicas de automatización de infraestructura. Esto se ilustra a continuación.</p>
 
-<p><img src="https://raw.githubusercontent.com/naughtystyle/naughtystyle.github.io/master/images/basic-pipeline.png" alt="Build" /></p>
+<p><img src="/images/microservices/basic_pipeline.png" alt="Build" /></p>
 
 <p>Como este no es un artículo sobre Entrega Continua, pondremos atención solo a un par de características clave. Queremos la mayor confianza posible en que nuestro software funciona, por lo que realizamos muchas pruebas automatizadas. La promoción del software de trabajo ‘arriba’ de la tubería significa que automatizamos la implementación en cada nuevo entorno.</p>
 
@@ -389,7 +391,7 @@ SOA signifique cosas tan diferentes significa que es valioso tener un término q
 
 <p>Otra área en la que vemos equipos que utilizan una amplia automatización de la infraestructura es en la administración de microservicios en la producción. En contraste con nuestra afirmación anterior de que mientras el despliegue sea aburrido no hay tanta diferencia entre monolitos y microservicios, el panorama operacional para cada uno puede ser notablemente diferente.</p>
 
-<p><img src="https://raw.githubusercontent.com/naughtystyle/naughtystyle.github.io/master/images/micro-deployment.png" alt="Despliegue de Microservicios" /></p>
+<p><img src="/images/microservices/micro_deployment.png" alt="Despliegue de Microservicios" /></p>
 
 <h2 id="diseño-para-fallas">Diseño para fallas</h2>
 
