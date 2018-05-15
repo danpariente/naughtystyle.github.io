@@ -189,6 +189,8 @@ h1, h2, h3, a { color: #dc3643; padding-bottom: 20px; }
 
 p { line-height: 2.2em; }
 
+img.center { display: block; margin-left: auto; margin-right: auto; }
+
 </style>
 
 <body>
@@ -252,7 +254,7 @@ p { line-height: 2.2em; }
 
 <p>Las aplicaciones monolíticas pueden tener éxito, pero cada vez son más las personas que sienten frustraciones con las mismas, especialmente a medida que se despliegan más aplicaciones en la nube. Los ciclos de cambio están unidos - un cambio hecho en una pequeña parte de la aplicación, requiere que todo el monolito sea reconstruido y desplegado. Con el tiempo, a menudo es difícil mantener una buena estructura modular, lo que hace más difícil mantener los cambios que sólo deberían afectar a un módulo dentro de ese módulo. El escalado requiere escalar toda la aplicación en lugar de partes de ésta que requieren mayores recursos.</p>
 
-<p><img src="/images/microservices/sketch.png" alt="Monolitos &amp; Microservicios" /></p>
+<p><img src="/images/microservices/sketch.png" alt="Monolitos &amp; Microservicios" class="center" /></p>
 
 <p><em>Figura 1: Monolitos y Microservicios</em></p>
 
@@ -289,13 +291,13 @@ p { line-height: 2.2em; }
 – Melvyn Conway, 1967</p>
 </blockquote>
 
-<p><img src="/images/microservices/conways_law.png" alt="Ley de Conway" /></p>
+<p><img src="/images/microservices/conways_law.png" alt="Ley de Conway" class="center" /></p>
 
 <p><em>Figura 2: Ley de Conway en acción</em></p>
 
 <p>El enfoque de la división desde el punto de vista de los microservicios es diferente, ya que se divide en servicios organizados en base a la <strong>capacidad empresarial</strong>. Tales servicios requieren una amplia implementación de software para esa área de negocio, incluyendo interfaz de usuario, almacenamiento persistente y cualquier colaboración externa. En consecuencia, los equipos son multifuncionales, incluyendo toda la gama de habilidades necesarias para el desarrollo: experiencia del usuario, base de datos y gestión de proyectos.</p>
 
-<p><img src="/images/microservices/prefer_functional_staff_organisation.png" alt="Organizacion de Equipos" /></p>
+<p><img src="/images/microservices/prefer_functional_staff_organisation.png" alt="Organizacion de Equipos" class="center" /></p>
 
 <p><em>Figura 3: Limites del servicio reafirmado por los limites del equipo</em></p>
 
@@ -379,7 +381,7 @@ SOA signifique cosas tan diferentes significa que es valioso tener un término q
 
 <p>Además de descentralizar las decisiones sobre modelos conceptuales, los microservicios también descentralizan las decisiones de almacenamiento de datos. Mientras que las aplicaciones monolíticas prefieren una única base de datos lógica para los datos persistentes, las empresas a menudo prefieren una única base de datos para toda una gama de aplicaciones - muchas de estas decisiones se toman a través de los modelos comerciales de los proveedores en torno a la concesión de licencias. Los microservicios prefieren dejar que cada servicio administre su propia base de datos, ya sea diferentes instancias de la misma tecnología de base de datos, o sistemas de base de datos completamente diferentes - un enfoque llamado <a target="blank" href="https://martinfowler.com/bliki/PolyglotPersistence.html">Persistencia Políglota</a>. Se puede utilizar la persistencia políglota en un monolito, pero aparece más frecuentemente con microservicios.</p>
 
-<p><img src="/images/microservices/decentralised_data.png" alt="Datos Descentralizados" /></p>
+<p><img src="/images/microservices/decentralised_data.png" alt="Datos Descentralizados" class="center" /></p>
 
 <p><em>Figura 4: Datos Centralizados/Decentralizados</em></p>
 
@@ -395,7 +397,7 @@ SOA signifique cosas tan diferentes significa que es valioso tener un término q
 
 <p>Muchos de los productos o sistemas que se están construyendo con microservicios están siendo construidos por equipos con amplia experiencia en la <a target="blank" href="https://martinfowler.com/bliki/ContinuousDelivery.html">Entrega Continua (CD)</a> y su precursor, la <a target="blank" href="https://martinfowler.com/articles/continuousIntegration.html">Integración Continua (CI)</a>. Los equipos que construyen software de esta manera hacen un uso extensivo de las técnicas de automatización de infraestructura. Esto se ilustra a continuación.</p>
 
-<p><img src="/images/microservices/basic_pipeline.png" alt="Build" /></p>
+<p><img src="/images/microservices/basic_pipeline.png" alt="Build" class="center" /></p>
 
 <p><em>Figura 5: Flujo básico de build</em></p>
 
@@ -405,7 +407,7 @@ SOA signifique cosas tan diferentes significa que es valioso tener un término q
 
 <p>Otra área en la que vemos equipos que utilizan una amplia automatización de la infraestructura es en la administración de microservicios en la producción. En contraste con nuestra afirmación anterior de que mientras el despliegue sea aburrido no hay tanta diferencia entre monolitos y microservicios, el panorama operacional para cada uno puede ser notablemente diferente.</p>
 
-<p><img src="/images/microservices/micro_deployment.png" alt="Despliegue de Microservicios" /></p>
+<p><img src="/images/microservices/micro_deployment.png" alt="Despliegue de Microservicios" class="center" /></p>
 
 <p><em>Figura 6: El despliegue de modulos es a menudo diferente</em></p>
 

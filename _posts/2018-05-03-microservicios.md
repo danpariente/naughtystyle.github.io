@@ -24,7 +24,7 @@ Un servidor monolítico de este tipo es una forma natural de abordar la construc
 
 Las aplicaciones monolíticas pueden tener éxito, pero cada vez son más las personas que sienten frustraciones con las mismas, especialmente a medida que se despliegan más aplicaciones en la nube. Los ciclos de cambio están unidos - un cambio hecho en una pequeña parte de la aplicación, requiere que todo el monolito sea reconstruido y desplegado. Con el tiempo, a menudo es difícil mantener una buena estructura modular, lo que hace más difícil mantener los cambios que sólo deberían afectar a un módulo dentro de ese módulo. El escalado requiere escalar toda la aplicación en lugar de partes de ésta que requieren mayores recursos.
 
-<img src="/images/microservices/sketch.png" alt="Monolitos & Microservicios">
+<img src="/images/microservices/sketch.png" alt="Monolitos & Microservicios" class="center">
 
 _Figura 1: Monolitos y Microservicios_
 
@@ -59,13 +59,13 @@ Cuando se busca dividir una aplicación grande en partes, a menudo se centra en 
 > Cualquier organización que diseñe un sistema (definido ampliamente) producirá un diseño cuya estructura es una copia de la estructura de comunicación de la organización.
 -- Melvyn Conway, 1967
 
-<img src="/images/microservices/conways_law.png" alt="Ley de Conway">
+<img src="/images/microservices/conways_law.png" alt="Ley de Conway" class="center">
 
 _Figura 2: Ley de Conway en acción_
 
 El enfoque de la división desde el punto de vista de los microservicios es diferente, ya que se divide en servicios organizados en base a la **capacidad empresarial**. Tales servicios requieren una amplia implementación de software para esa área de negocio, incluyendo interfaz de usuario, almacenamiento persistente y cualquier colaboración externa. En consecuencia, los equipos son multifuncionales, incluyendo toda la gama de habilidades necesarias para el desarrollo: experiencia del usuario, base de datos y gestión de proyectos.
 
-<img src="/images/microservices/prefer_functional_staff_organisation.png" alt="Organizacion de Equipos">
+<img src="/images/microservices/prefer_functional_staff_organisation.png" alt="Organizacion de Equipos" class="center">
 
 _Figura 3: Limites del servicio reafirmado por los limites del equipo_
 
@@ -148,7 +148,7 @@ Este problema es común entre aplicaciones, pero también puede ocurrir dentro d
 
 Además de descentralizar las decisiones sobre modelos conceptuales, los microservicios también descentralizan las decisiones de almacenamiento de datos. Mientras que las aplicaciones monolíticas prefieren una única base de datos lógica para los datos persistentes, las empresas a menudo prefieren una única base de datos para toda una gama de aplicaciones - muchas de estas decisiones se toman a través de los modelos comerciales de los proveedores en torno a la concesión de licencias. Los microservicios prefieren dejar que cada servicio administre su propia base de datos, ya sea diferentes instancias de la misma tecnología de base de datos, o sistemas de base de datos completamente diferentes - un enfoque llamado <a target="blank" href="https://martinfowler.com/bliki/PolyglotPersistence.html">Persistencia Políglota</a>. Se puede utilizar la persistencia políglota en un monolito, pero aparece más frecuentemente con microservicios.
 
-<img src="/images/microservices/decentralised_data.png" alt="Datos Descentralizados">
+<img src="/images/microservices/decentralised_data.png" alt="Datos Descentralizados" class="center">
 
 _Figura 4: Datos Centralizados/Decentralizados_
 
@@ -164,7 +164,7 @@ Las técnicas de automatización de infraestructuras han evolucionado enormement
 
 Muchos de los productos o sistemas que se están construyendo con microservicios están siendo construidos por equipos con amplia experiencia en la <a target="blank" href="https://martinfowler.com/bliki/ContinuousDelivery.html">Entrega Continua (CD)</a> y su precursor, la <a target="blank" href="https://martinfowler.com/articles/continuousIntegration.html">Integración Continua (CI)</a>. Los equipos que construyen software de esta manera hacen un uso extensivo de las técnicas de automatización de infraestructura. Esto se ilustra a continuación.
 
-<img src="/images/microservices/basic_pipeline.png" alt="Build">
+<img src="/images/microservices/basic_pipeline.png" alt="Build" class="center">
 
 _Figura 5: Flujo básico de build_
 
@@ -174,7 +174,7 @@ Una aplicación monolítica será construida, testada y empujada a través de es
 
 Otra área en la que vemos equipos que utilizan una amplia automatización de la infraestructura es en la administración de microservicios en la producción. En contraste con nuestra afirmación anterior de que mientras el despliegue sea aburrido no hay tanta diferencia entre monolitos y microservicios, el panorama operacional para cada uno puede ser notablemente diferente.
 
-<img src="/images/microservices/micro_deployment.png" alt="Despliegue de Microservicios">
+<img src="/images/microservices/micro_deployment.png" alt="Despliegue de Microservicios" class="center">
 
 _Figura 6: El despliegue de modulos es a menudo diferente_
 
