@@ -16,7 +16,7 @@ El término "Arquitectura de Microservicios" ha surgido en los últimos años pa
 
 #### Contenido
 
-<ul>
+<ul class="toc">
   <li><a href="#caracteristicas">Características de una arquitectura de microservicios</a></li>
   <li><a href="#componentizacion">Componentización mediante servicios</a></li>
   <li><a href="#organizacion">Organizado en torno a las capacidades de negocio</a></li>
@@ -34,7 +34,7 @@ El término "Arquitectura de Microservicios" ha surgido en los últimos años pa
 
 #### Barras Laterales
 
-<ul>
+<ul class="toc">
   <li><a href="#tamano_microservicio">¿Qué tamaño tiene un microservicio?</a></li>
   <li><a href="#microservicios_soa">Microservicios y SOA</a></li>
   <li><a href="#muchos_lenguajes_opciones">Muchos lenguajes, muchas opciones</a></li>

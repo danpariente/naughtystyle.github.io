@@ -20,6 +20,18 @@ img.center {
   margin-right: auto;
 }
 
+ul.toc li{
+  color: rgb(220,54,67);
+  list-style: disc;
+  margin-left: 2em;
+}
+
+a:hover {
+  color: rgb(220,54,67);
+}
+
+
+
 .side-note {
   font-size: 0.9em;
   background: #EEE;
