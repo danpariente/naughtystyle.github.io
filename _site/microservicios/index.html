@@ -109,7 +109,8 @@ img.dan-image { opacity: 0.6; filter: alpha(opacity=60); }
 @media only screen and (max-width: 40.625em) { aside.left-container, aside.right-container { float: left; display: block; margin-right: 2.3576515979%; width: 100%; }
   aside.left-container:last-child, aside.right-container:last-child { margin-right: 0; }
   aside.left-container img.dan-image, aside.right-container img.dan-image { display: block; margin: 0 auto; }
-  section.main-container p { margin: 40px !important; padding: 40px !important; } }
+  section.main-container h1, section.main-container h2, section.main-container h3, section.main-container h4, section.main-container p { margin: 5px; padding: 5px; }
+  section.main-container blockquote p { border-left: 2px solid #DDD; margin: 0; padding: 0 0.4em; } }
 header.navigation { background-color: #333; border-bottom: 1px solid #1a1a1a; font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; height: 60px; width: 100%; z-index: 999; }
 header.navigation .menu-wrapper { max-width: 68em; margin-left: auto; margin-right: auto; position: relative; z-index: 9999; }
 header.navigation .menu-wrapper:after { content: ""; display: table; clear: both; }
@@ -195,6 +196,8 @@ ul.toc li { color: #dc3643; list-style: disc; margin-left: 2em; }
 
 a:hover { color: #dc3643; }
 
+blockquote { font-size: 1.2em; }
+
 .side-note { font-size: 0.9em; background: #EEE; padding: 1em; }
 
 </style>
@@ -244,6 +247,11 @@ a:hover { color: #dc3643; }
 
   <section class="main-container"><h1 id="microservicios">Microservicios</h1>
 
+<blockquote>
+  <p>El siguiente artículo es una traducción del original <a target="blank" href="https://martinfowler.com/articles/microservices.html">Microservices</a><br />
+  escrito por Martin Fowler y James Lewis, realizada el 22 de Mayo de 2018</p>
+</blockquote>
+
 <h2 id="una-definición-de-este-nuevo-termino-arquitectural">Una definición de este nuevo termino arquitectural</h2>
 
 <p>El término “Arquitectura de Microservicios” ha surgido en los últimos años para describir una forma particular de diseñar aplicaciones de software como conjuntos de servicios de despliegue independiente. Si bien no existe una definición precisa de este estilo arquitectónico, existen ciertas características comunes en torno a la organización acerca de la capacidad operativa, la distribución automatizada, la inteligencia en los endpoints y el control descentralizado de lenguajes y datos.</p>
@@ -282,13 +290,13 @@ a:hover { color: #dc3643; }
 
 <hr />
 
-<p>“Microservicios” - otro nuevo término en las concurridas calles de la arquitectura de software. Aunque nuestra inclinación natural es pasar por alto estas cosas con una mirada despectiva, este trozo de terminología describe un estilo de sistemas de software que encontramos cada vez más atractivos. Hemos visto muchos proyectos usar este estilo en los últimos años, y los resultados hasta ahora han sido positivos, hasta el punto de que para muchos de nuestros colegas se está convirtiendo en el estilo por defecto para la creación de aplicaciones empresariales. Lamentablemente, sin embargo, no hay mucha información que describa el concepto de microservicio y cómo implementarlo.</p>
+<p>“Microservicios” - otro nuevo término en las concurridas calles de la arquitectura de software. Aunque nuestra inclinación natural es pasar por alto estas cosas con una mirada despectiva, este trozo de terminología describe un estilo de sistemas de software que encontramos cada vez más atractivos. Hemos visto muchos proyectos usar este estilo en los últimos años y los resultados hasta ahora han sido positivos, hasta el punto de que para muchos de nuestros colegas se está convirtiendo en el estilo por defecto para la creación de aplicaciones empresariales. Lamentablemente, sin embargo, no hay mucha información que describa el concepto de microservicio y cómo implementarlo.</p>
 
 <p>En resumen, el estilo de arquitectura de microservicios<a href="#nota_1">[1]</a> es un enfoque para desarrollar una única aplicación como un conjunto de pequeños servicios, cada uno de los cuales se ejecuta en su propio proceso y se comunica con mecanismos ligeros, a menudo una API de recursos HTTP. Estos servicios se construyen en torno a las capacidades operativas y pueden desplegarse de forma independiente mediante maquinaria de despliegue completamente automatizada. Existe un mínimo de manejo centralizado de estos servicios, el cual puede ser escrito en diferentes lenguajes de programación y usar diferentes tecnologías de almacenamiento de datos.</p>
 
-<p>Para empezar a explicar el estilo de los microservicios es conveniente compararlo con el estilo monolítico: una aplicación monolítica construida como una sola unidad. Las aplicaciones empresariales suelen constar de tres partes principales: una interfaz de usuario del lado del cliente (que consta de páginas HTML y javascript que se ejecutan en un navegador en el equipo del usuario), una base de datos (que consta de muchas tablas insertadas en un sistema de gestión de bases de datos común y, por lo general, relacional) y una aplicación del lado del servidor. La aplicación del lado del servidor manejará las peticiones HTTP, ejecutará la lógica del dominio, recuperará y actualizará los datos de la base de datos, y seleccionará y completará las vistas HTML que se enviarán al navegador. Esta aplicación del lado del servidor es un monolito - un único ejecutable lógico<a href="#nota_2">[2]</a>. Cualquier cambio en el sistema implica la creación y despliegue de una nueva versión de la aplicación del lado del servidor.</p>
+<p>Para empezar a explicar el estilo de los microservicios es conveniente compararlo con el estilo monolítico: una aplicación monolítica construida como una sola unidad. Las aplicaciones empresariales suelen constar de tres partes principales: una interfaz de usuario del lado del cliente (que consta de páginas HTML y javascript que se ejecutan en un navegador en el equipo del usuario), una base de datos (que consta de muchas tablas insertadas en un sistema de base de datos común, por lo general relacional) y una aplicación del lado del servidor. La aplicación del lado del servidor manejará las peticiones HTTP, ejecutará la lógica del dominio, recuperará y actualizará los datos de la base de datos, y seleccionará y completará las vistas HTML que se enviarán al navegador. Esta aplicación del lado del servidor es un monolito - un único ejecutable lógico<a href="#nota_2">[2]</a>. Cualquier cambio en el sistema implica el despliegue de una nueva versión de la aplicación del lado del servidor.</p>
 
-<p>Un servidor monolítico de este tipo es una forma natural de abordar la construcción de un sistema de este tipo. Toda su lógica para manejar una solicitud se ejecuta en un solo proceso, permitiéndole usar las características básicas de su lenguaje para dividir la aplicación en clases, funciones y espacios de nombres (namespaces). Con un poco de cuidado, puede ejecutar y probar la aplicación en el portátil de un desarrollador y utilizar un canal de despliegue para asegurarse de que los cambios se probaron e incorporaron correctamente en producción. Se puede escalar horizontalmente el monolito ejecutando muchas instancias detrás de un balanceador de carga (load-balancer).</p>
+<p>Un servidor monolítico de este tipo es una forma natural de abordar la construcción de un sistema de esta clase. Toda su lógica para manejar una solicitud se ejecuta en un solo proceso, permitiéndole usar las características básicas de su lenguaje para dividir la aplicación en clases, funciones y espacios de nombres (namespaces). Con un poco de cuidado, puede ejecutar y probar la aplicación en el portátil de un desarrollador y utilizar un canal de despliegue para asegurarse de que los cambios se probaron e incorporaron correctamente en producción. Se puede escalar horizontalmente el monolito ejecutando muchas instancias detrás de un balanceador de carga (load-balancer).</p>
 
 <p>Las aplicaciones monolíticas pueden tener éxito, pero cada vez son más las personas que sienten frustraciones con las mismas, especialmente a medida que se despliegan más aplicaciones en la nube. Los ciclos de cambio están unidos - un cambio hecho en una pequeña parte de la aplicación, requiere que todo el monolito sea desplegado nuevamente. Con el tiempo, a menudo es difícil mantener una buena estructura modular, lo que hace más difícil mantener los cambios que sólo deberían afectar a un módulo dentro de ese módulo. El escalado requiere escalar toda la aplicación en lugar de partes de ésta que requieren mayores recursos.</p>
 

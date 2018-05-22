@@ -57,9 +57,14 @@ img.dan-image {
     }
   }
   section.main-container {
-    p {
-      margin: 40px !important;
-      padding: 40px !important;
+    h1, h2, h3, h4, p {
+      margin: 5px;
+      padding: 5px;
+    }
+    blockquote p {
+      border-left: 2px solid #DDD;
+      margin: 0;
+      padding: 0 0.4em;
     }
   }
 }
