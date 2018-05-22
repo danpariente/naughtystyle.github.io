@@ -10,7 +10,7 @@ tags: ["Software Architecture"]
 > El siguiente artículo es una traducción del original <a target="blank" href="https://martinfowler.com/articles/microservices.html">Microservices</a><br>
   escrito por Martin Fowler y James Lewis, realizada el 22 de Mayo de 2018
 
-## Una definición de este nuevo termino arquitectural
+## Una definición de este nuevo término arquitectural
 
 
 El término "Arquitectura de Microservicios" ha surgido en los últimos años para describir una forma particular de diseñar aplicaciones de software como conjuntos de servicios de despliegue independiente. Si bien no existe una definición precisa de este estilo arquitectónico, existen ciertas características comunes en torno a la organización acerca de la capacidad operativa, la distribución automatizada, la inteligencia en los endpoints y el control descentralizado de lenguajes y datos.
@@ -70,7 +70,7 @@ No afirmamos que el estilo de microservicio sea novedoso o innovador, sus raíce
 <a id="caracteristicas"></a>
 ## Características de una Arquitectura de Microservicios
 
-No podemos decir que exista una definición formal del estilo arquitectónico de los microservicios, pero podemos intentar describir lo que vemos como características comunes para las arquitecturas que se ajustan a la categoría. Al igual que con cualquier definición que describa características comunes, no todas las arquitecturas de microservicios tienen todas las características, pero esperamos que la mayoría de las arquitecturas de microservicios exhiban la mayoría de las características. Si bien nosotros, los autores, hemos sido miembros activos de esta comunidad bastante dispersa, nuestra intención es intentar una descripción de lo que vemos en nuestro propio trabajo y en esfuerzos similares por parte de equipos que conocemos. En particular, no estamos estableciendo ninguna definición a la que ajustarse.
+No podemos decir que exista una definición formal del estilo arquitectónico de los microservicios, pero podemos intentar describir lo que vemos como características comunes para las arquitecturas que se ajustan a la categoría. Al igual que con cualquier definición que describa atributos comunes, no todas las arquitecturas de microservicios tienen todas las características, pero esperamos que la mayoría de estas exhiban la mayoría de los atributos. Si bien nosotros, los autores, hemos sido miembros activos de esta comunidad bastante dispersa, nuestra intención es intentar una descripción de lo que vemos en nuestro propio trabajo y en esfuerzos similares por parte de equipos que conocemos. En particular, no estamos estableciendo ninguna definición a la que ajustarse.
 
 <a id="componentizacion"></a>
 ### Componentización mediante servicios
