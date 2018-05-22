@@ -168,7 +168,7 @@ Ciertamente, muchas de las técnicas que se utilizan en la comunidad de microser
 desarrolladores que integran servicios en grandes organizaciones. El patrón de Lector Tolerante (Tolerant Reader) es un ejemplo de esto. Los esfuerzos por
 utilizar la web han contribuido, el uso de protocolos sencillos es otro enfoque derivado de estas experiencias - una reacción lejos de los
 estándares centrales que han alcanzado una complejidad que es, francamente, impresionante. (Cada vez que usted necesita una ontología para
-manejar sus ontologías, se da cuenta de que está en serios problemas.
+manejar sus ontologías, se da cuenta de que está en serios problemas.)
 
 Esta manifestación común de SOA ha llevado a algunos defensores de los microservicios a rechazar la etiqueta de SOA por completo, aunque otros
 consideran que los microservicios son una forma de SOA<a href="#nota_7">[7]</a>, tal vez la orientación a servicios bien hecha. De cualquier manera, el hecho de que
@@ -180,7 +180,7 @@ SOA signifique cosas tan diferentes significa que es valioso tener un término q
 
 Una de las consecuencias de la gobernanza centralizada es la tendencia a la normalización en plataformas tecnológicas concretas. La experiencia demuestra que este enfoque es restrictivo - no todo problema es un clavo y no toda solución un martillo. Preferimos utilizar la herramienta adecuada para el trabajo y aunque las aplicaciones monolíticas pueden aprovechar los diferentes lenguajes hasta cierto punto, no es tan común.
 
-Al dividir los componentes del monolito en servicios, podemos elegir a la hora de construir cada uno de ellos. ¿Desea utilizar Node.js para poner de pie una página de reportes simple? Vamos. C++ para un componente particularmente nudoso y casi en tiempo real? Bien. ¿Desea cambiar a un tipo diferente de base de datos que mejor se adapte al comportamiento de lectura de un componente? Tenemos la tecnología para reconstruirlo.
+Al dividir los componentes del monolito en servicios, podemos elegir a la hora de construir cada uno de ellos. ¿Desea utilizar Node.js para poner de pie una página de reportes simple? Vamos. ¿C++ para un componente particularmente nudoso y casi en tiempo real? Bien. ¿Desea cambiar a un tipo diferente de base de datos que mejor se adapte al comportamiento de lectura de un componente? Tenemos la tecnología para reconstruirlo.
 
 Por supuesto, el hecho de que pueda hacer algo no significa que deba hacerlo, pero particionar su sistema de esta manera significa que tiene la opción.
 
@@ -202,7 +202,7 @@ El crecimiento de la JVM como plataforma es sólo el último ejemplo de mezcla d
 <a id="administracion_datos"></a>
 ## Administración Descentralizada de Datos
 
-La descentralización de la administración de datos se presenta de varias maneras diferentes. En el nivel más abstracto, significa que el modelo conceptual del mundo diferirá entre sistemas. Este es un problema común cuando se integra en una gran empresa, la vista del departamento de ventas hacia un cliente será diferente de la vista de soporte tecnico. Algunas cosas que se llaman clientes del punto de vista de ventas pueden no aparecer en absoluto de lado de soporte. Aquellos que puedan tener atributos diferentes y (peor aun) atributos comunes con semántica sutilmente diferente.
+La descentralización de la administración de datos se presenta de varias maneras diferentes. En el nivel más abstracto, significa que el modelo conceptual del mundo diferirá entre sistemas. Este es un problema común cuando se integra en una gran empresa, la vista del departamento de ventas hacia un cliente será diferente de la vista de soporte técnico. Algunas cosas que se llaman clientes del punto de vista de ventas pueden no aparecer en absoluto de lado de soporte. Aquellos que puedan tener atributos diferentes y (peor aun) atributos comunes con semántica sutilmente diferente.
 
 Este problema es común entre aplicaciones, pero también puede ocurrir dentro de las aplicaciones, especialmente cuando esa aplicación está dividida en componentes separados. Una forma útil de pensar sobre esto es la noción de Contexto Limitado <a target="blank" href="https://martinfowler.com/bliki/BoundedContext.html">(Bounded Context)</a> de Diseño Dirigido por Dominio. DDD divide un dominio complejo en múltiples contextos limitados y mapea las relaciones entre ellos. Este proceso es útil tanto para arquitecturas monolíticas como de microservicio, pero existe una correlación natural entre los límites de servicio y contexto que ayuda a clarificar, y como describimos en la sección sobre capacidades de negocio, reforzar las separaciones.
 
@@ -241,7 +241,7 @@ _Figura 5: Flujo básico de build_
 
 Como este no es un artículo sobre Entrega Continua, pondremos atención solo a un par de características clave. Queremos la mayor confianza posible en que nuestro software funciona, por lo que realizamos muchos **tests automatizados**. La promoción del software de trabajo 'arriba' de la tubería significa que **automatizamos el despliegue** en cada nuevo entorno.
 
-Una aplicación monolítica será construida, testada y empujada a través de estos ambientes alegremente. Resulta que una vez que se ha invertido en automatizar el camino a la producción de un monolito, entonces desplegar más aplicaciones ya no parece tan aterrador. Recuerde, uno de los objetivos de la Entrega Continua es hacer que el despliegue sea aburrido, así que ya sea que se trate de una o tres aplicaciones, siempre y cuando sea aburrido no importa<a href="#nota_12">[12]</a>.
+Una aplicación monolítica será construida, testeada y empujada a través de estos ambientes alegremente. Resulta que una vez que se ha invertido en automatizar el camino a la producción de un monolito, entonces desplegar más aplicaciones ya no parece tan aterrador. Recuerde, uno de los objetivos de la Entrega Continua es hacer que el despliegue sea aburrido, así que ya sea que se trate de una o tres aplicaciones, siempre y cuando sea aburrido no importa<a href="#nota_12">[12]</a>.
 
 Otra área en la que vemos equipos que utilizan una amplia automatización de la infraestructura es en la administración de microservicios en la producción. En contraste con nuestra afirmación anterior de que mientras el despliegue sea aburrido no hay tanta diferencia entre monolitos y microservicios, el panorama operacional para cada uno puede ser notablemente diferente.
 
@@ -259,7 +259,7 @@ Un efecto secundario que hemos encontrado del aumento de la automatización como
 <a id="diseno_fallas"></a>
 ## Diseño para fallas
 
-Una consecuencia del uso de los servicios como componentes es que las aplicaciones deben diseñarse de manera que puedan tolerar el fallo de los servicios. Cualquier llamada de servicio puede fallar debido a la falta de disponibilidad del proveedor, el cliente tiene que responder a esto tan elegantemente como sea posible. Esto es una desventaja en comparación con un diseño monolítico, ya que introduce complejidad adicional para manejarlo. La consecuencia es que los equipos de microservicios reflexionan constantemente sobre cómo las fallas en los servicios afectan la experiencia del usuario. <a target="blank" href="https://github.com/Netflix/SimianArmy">El Ejército Simian</a> de Netflix induce fallas en los servicios e incluso en los centros de datos durante la jornada laboral para probar tanto la resiliencia como la monitorización de la aplicación.
+Una consecuencia del uso de los servicios como componentes es que las aplicaciones deben diseñarse de manera que puedan tolerar el fallo de los servicios. Cualquier llamada de servicio puede fallar debido a la falta de disponibilidad del proveedor, el cliente tiene que responder a esto tan elegantemente como sea posible. Esto es una desventaja en comparación con un diseño monolítico, ya que introduce complejidad adicional para manejarlo. La consecuencia es que los equipos de microservicios reflexionan constantemente sobre cómo las fallas en los servicios afectan la experiencia del usuario. <a target="blank" href="https://github.com/Netflix/SimianArmy">Simian Army</a> de Netflix induce fallas en los servicios e incluso en los centros de datos durante la jornada laboral para probar tanto la resiliencia como la monitorización de la aplicación.
 
 Este tipo de prueba automatizada en la producción sería suficiente para dar a la mayoría de los grupos de operación el tipo de escalofríos que normalmente preceden a una semana de ausencia del trabajo. Esto no quiere decir que los estilos arquitectónicos monolíticos no sean capaces de configuraciones de monitorización sofisticadas - es solamente menos común en nuestra experiencia.
 
@@ -269,7 +269,7 @@ Esto es particularmente importante para una arquitectura de microservicios porqu
 
 Los monolitos pueden construirse para que sean tan transparentes como un microservicio; de hecho, deberían serlo. La diferencia es que es absolutamente necesario saber cuándo se desconectan los servicios que se ejecutan en procesos diferentes. Con las librerías dentro del mismo proceso, es menos probable que este tipo de transparencia sea útil.
 
-Los equipos de microservicios esperarán ver configuraciones sofisticadas de monitoreo y registro para cada servicio individual, tales como cuadros estadisticos que muestren el estado ascendente/descendente y una variedad de métricas operativas y de negocios relevantes. Los detalles sobre el estado de los cortacircuitos (Circuit Breakers), el rendimiento de corriente y la latencia son otros ejemplos que encontramos a menudo en la naturaleza.
+Los equipos de microservicios esperarán ver configuraciones sofisticadas de monitoreo y registro para cada servicio individual, tales como cuadros estadísticos que muestren el estado ascendente/descendente y una variedad de métricas operativas y de negocios relevantes. Los detalles sobre el estado de los cortacircuitos (Circuit Breakers), el rendimiento de corriente y la latencia son otros ejemplos que encontramos a menudo en la naturaleza.
 
 <a id="circuit_breaker_produccion"></a>
 <div class="side-note">
@@ -315,7 +315,7 @@ Otro problema es que si los componentes no se componen limpiamente, todo lo que 
 
 Por último, está el factor de la habilidad del equipo. Las nuevas técnicas tienden a ser adoptadas por equipos más hábiles. Pero una técnica que es más efectiva para un equipo más hábil no necesariamente va a funcionar para equipos menos hábiles. Hemos visto muchos casos de equipos menos hábiles construyendo arquitecturas monolíticas desordenadas, pero lleva tiempo ver lo que ocurre cuando este tipo de lío ocurre con los microservicios. Un equipo pobre siempre creará un sistema pobre - es muy difícil saber si los microservicios reducen el desorden en este caso o lo empeoran.
 
-Un argumento razonable que hemos escuchado es que no se debe empezar con una arquitectura de microservicios. En su lugar, <a target="blank" href="https://martinfowler.com/bliki/MonolithFirst.html">comience con un monolito</a>, manténgalo modular y divídalo en microservicios una vez que el monolito se convierta en un problema. (Aunque <a target="blank" href="https://martinfowler.com/articles/dont-start-monolith.html">este consejo no es el ideal</a>, ya que una buena interfaz en proceso no suele ser una buena interfaz de servicio.
+Un argumento razonable que hemos escuchado es que no se debe empezar con una arquitectura de microservicios. En su lugar, <a target="blank" href="https://martinfowler.com/bliki/MonolithFirst.html">comience con un monolito</a>, manténgalo modular y divídalo en microservicios una vez que el monolito se convierta en un problema. (Aunque <a target="blank" href="https://martinfowler.com/articles/dont-start-monolith.html">este consejo no es el ideal</a>, ya que una buena interfaz en proceso no suele ser una buena interfaz de servicio.)
 
 Así que escribimos esto con cauteloso optimismo. Hasta ahora, hemos visto suficiente sobre el estilo del microservicio como para sentir que puede ser <a target="blank" href="https://martinfowler.com/microservices/">un camino que valga la pena recorrer</a>. No podemos decir con seguridad dónde terminaremos, pero uno de los retos del desarrollo de software es que sólo se pueden tomar decisiones basadas en la información imperfecta que actualmente se tiene a mano.
 
